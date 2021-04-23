@@ -1,0 +1,41 @@
+body{
+    height: 5000px;
+    background-color:burlywood;
+
+}
+header{
+    height:200px;
+}
+
+.fixed{
+    background-color: chocolate;
+    /* the fixed make postion same whatever we scroll up or down  */
+    position: fixed;
+    height: 50px;
+    width: 200px;
+    padding: 20px;
+    margin-left: 500px;
+}
+.absolute{
+    background-color: darkgoldenrod;
+    /* the absolute mean the postion not fixed and when we scroll up or down can't see the header */
+    position: absolute;
+    height: 50px;
+    width: 200px;
+    padding: 20px;
+    margin-left: 500px;
+    margin-top: 300px;
+}
+
+
+
+.relative{
+    background-color: darkgreen;
+    position: relative;
+    height: 50px;
+    width: 200px;
+    padding: 20px;
+    margin-left: 500px;
+    margin-top: 50px;
+}
+
