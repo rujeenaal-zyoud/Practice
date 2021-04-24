@@ -83,3 +83,121 @@ console.log('stores', stores);
 // SO JS can mainulate the DOM 
 
 
+// create table using DOM
+// in DOM we can just pass the table element as arragument 
+let parent= document.getElementById('parent');
+// create a table in globel for data contenet by passing table 
+let table=document.createElement('table');
+parent.appendChild(table);
+
+// create making header for the table that will be constant in table
+
+function MakingHeader(){
+    // create the row for table 
+    let headerRow=document.createElement('tr');
+    table.appendChild(headerRow);
+    //create each cell and pass a data for it 
+    // create the first cell in row
+    let firtCell=document.createElement('th');
+    headerRow.appendChild(firtCell);
+    firtCell.textContent='NAME';
+
+
+    for(let i=0;i<hours.length;i++){
+        let cellsHour=document.createElement('th');
+        headerRow.appendChild(cellsHour);
+        cellsHour.textContent=hours[i];
+
+
+    }
+    let lastCell=document.createElement('th');
+    headerRow.appendChild( lastCell);
+    lastCell.textContent='total daily';
+
+}
+MakingHeader();
+
+
+// here create render for each storeplace to ceate a rows and  fill it with same table in globel
+Cookie.prototype.renedr=function(){
+    let storeRow=document.createElement('tr');
+    table.appendChild(storeRow);
+    // when append data to each cell in row we using td
+    let nameTd=document.createElement('td');
+    storeRow.appendChild(nameTd);
+    // give text content for cell by using constracter data
+    nameTd.textContent=this.name;
+    // now create all rows for hour that the number of cookies per hour
+    for(let i=0;i<hours.length;i++){
+      // when append data to each cell in row we using td
+    let hourTd=document.createElement('td');
+    storeRow.appendChild(hourTd);
+    // give text content for cell by using constracter data
+    hourTd.textContent=this.cookiesperhour[i];  
+    }
+    let totalTd=document.createElement('td');
+    storeRow.appendChild(totalTd);
+    totalTd.textContent=this.total;
+
+}
+function makingFooter() {
+    // making footer row
+    let footerRow = document.createElement('tr');
+
+    // append footer row to the table
+    table.appendChild(footerRow);
+
+    // make first th for footer
+
+    let firstTh = document.createElement('th');
+
+    // append th to the footer row
+    footerRow.appendChild(firstTh);
+
+    // give text content
+    firstTh.textContent = 'Totals';
+
+
+    //find the totals in same clock in all store each day not the dailt total
+    let totalHour=0;
+    let totalOfTotal =0;
+    for( let i=0;i<hours.length;i++){
+       
+
+        for( let j=0;j<stores.length;j++){
+            console.log(hours[i]);
+            console.log(stores[j]);
+
+            totalHour +=stores[j].cookiesperhour[i];
+            totalOfTotal +=stores[j].cookiesperhour[i];
+            console.log(totalHour);
+
+
+        }
+        let footerTh = document.createElement('th');
+        footerRow.appendChild(footerTh);
+        footerTh.textContent=totalHour;
+    }
+let totalTh=document.createElement('th');
+footerRow.appendChild(totalTh);
+totalTh.textContent =totalOfTotal;
+
+}
+    makingFooter();
+//   Cookie.renedr();
+
+
+
+
+
+
+
+// creat form 
+let form =document.getElementById('form');
+form.addEventListener('submit',newStore);
+ function newStore(event)
+{
+    event.preventDefault();
+let newplace = event.target.newStroe.value;
+let Min =event.target.minCustmarPerHour.value;
+}

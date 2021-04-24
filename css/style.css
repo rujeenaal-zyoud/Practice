@@ -1,4 +1,4 @@
-body{
+/* body{
     height: 5000px;
     background-color:burlywood;
 
@@ -10,7 +10,7 @@ header{
 .fixed{
     background-color: chocolate;
     /* the fixed make postion same whatever we scroll up or down  */
-    position: fixed;
+    /* position: fixed;
     height: 50px;
     width: 200px;
     padding: 20px;
@@ -19,17 +19,17 @@ header{
 .absolute{
     background-color: darkgoldenrod;
     /* the absolute mean the postion not fixed and when we scroll up or down can't see the header */
-    position: absolute;
+    /* position: absolute;
     height: 50px;
     width: 200px;
     padding: 20px;
     margin-left: 500px;
     margin-top: 300px;
-}
+} */
 
 
 
-.relative{
+/* .relative{
     background-color: darkgreen;
     position: relative;
     height: 50px;
@@ -38,4 +38,15 @@ header{
     margin-left: 500px;
     margin-top: 50px;
 }
+  */
 
+  table, tr, th ,td{ 
+    margin-left: 30px;
+    border: 1px solid black;
+    border-collapse: collapse;
+
+}
+th{
+    height: 50px;
+    width: 70px;
+}
